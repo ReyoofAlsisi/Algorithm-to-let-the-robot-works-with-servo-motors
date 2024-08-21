@@ -1,7 +1,30 @@
-# Algorithm-to-let-the-robot-works-with-servo-motors
+#include <Servo.h>  
 
-1\ Initialization: setting up the arduino power, connect the Servo Motors and install all the libraries and indendencies.
-2\ Setting up the Servo Motors: by attatching it to its pins and setting their positions 
-3\ Define the Servo Motors' rotating functions: set the Servo Motors' rotating angle and use to position the Servo 
-4\ Controlling the Servo Motors: write the needed functions such as Loop() to repeatedly control the servo and use any sensor to determine the Servo's positions. And it could be 
-   updated depending on the giving commands
+// Define the pin connected to the servo
+const int SERVO_PIN = 9;
+
+// Create a Servo object
+Servo myServo;
+
+void setup() {
+  // Attach the servo to the specified pin
+  myServo.attach(SERVO_PIN);
+
+  // Set the servo to its initial position
+  myServo.write(90);  
+  delay(1000);        
+}
+
+void loop() {
+  // Move servo to 0 degrees
+  myServo.write(0);
+  delay(2000);  
+
+  // Move servo to 90 degrees
+  myServo.write(90);
+  delay(2000);  
+
+  // Move servo to 180 degrees
+  myServo.write(180);
+  delay(2000);  
+}
